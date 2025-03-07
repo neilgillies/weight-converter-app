@@ -1,7 +1,7 @@
 services:
   flask_app:
     build:
-      context: weight-converter-app
+      context: .
       dockerfile: Dockerfile
   nginx:
     image: nginx:latest
