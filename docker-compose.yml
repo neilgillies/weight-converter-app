@@ -1,16 +1,13 @@
-version: '3'
 services:
   flask_app:
-    build: .
-    ports:
-      - "5000:5000"
-    environment:
-      - FLASK_ENV=development
+    build:
+      context: flask-app
+      dockerfile: Dockerfile
   nginx:
     image: nginx:latest
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - /nginx.conf:/etc/nginx/nginx.com
     depends_on:
-      - flask_app
+      - flask-app
