@@ -1,5 +1,5 @@
 services:
-  flask_app:
+  flask-app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,4 +10,4 @@ services:
     volumes:
       - /nginx.conf:/etc/nginx/nginx.com
     depends_on:
-      - weight-converter-app
+      - flask-app
